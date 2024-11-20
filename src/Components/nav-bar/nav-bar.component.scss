@@ -1,0 +1,30 @@
+//-------- media queries-------------------------
+
+
+
+
+// for mobile/tablets
+@media only screen and (max-width:991px)
+{
+  
+}
+
+// for laptops/desktops
+@media only screen and (min-width:992px) 
+{
+
+}
+ 
+
+// -=-----------------------------------------------------
+
+.nav-icons{
+    display: flex;
+    gap: 20px;
+}
+
+.navbar{
+    z-index: 1;
+    position:absolute;
+    width: 100%;
+}
