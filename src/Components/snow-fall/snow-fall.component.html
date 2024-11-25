@@ -1,0 +1,6 @@
+<div *ngFor="let snowflake of snowflakes" class="snowflake" [ngStyle]="{
+    'left': getRandomPosition(),
+    'animation-duration': getRandomDuration(),
+    'font-size': getRandomSize() + 'px'
+  }"></div>
+  

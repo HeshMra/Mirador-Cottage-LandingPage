@@ -1,0 +1,45 @@
+/* Snowfall Effect */
+@keyframes snowfall {
+  to {
+    transform: translateY(var(--snowfall-distance, 400vh)); /* Fall based on content height */
+  }
+}
+  .snowflake {
+    position: absolute;
+    top: -20%;
+    color: white;
+    font-size: 24px;
+    pointer-events: none;
+    animation: snowfall linear infinite;
+    opacity: 0.8;
+    z-index: 9999; /* Make sure snowflakes are on top */
+  }
+  
+  /* Snowflake styles */
+  .snowflake:nth-child(odd) {
+    animation-duration: 10s;
+    animation-delay: 0s;
+  }
+  
+  .snowflake:nth-child(even) {
+    animation-duration: 15s;
+    animation-delay: 5s;
+  }
+  
+  /* Randomly position snowflakes */
+  .snowflake::before {
+    content: '.';
+    font-size: 45px;
+  }
+
+  :host {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure snowfall doesn't block interactions */
+    z-index: 9999; /* Ensure it's on top */
+  }
+  
+  
