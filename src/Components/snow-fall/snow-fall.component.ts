@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component ,OnInit, Renderer2, Inject, PLATFORM_ID, HostListener } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-snow-fall',
@@ -8,36 +9,35 @@ import { Component } from '@angular/core';
   templateUrl: './snow-fall.component.html',
   styleUrl: './snow-fall.component.scss'
 })
-export class SnowFallComponent {
-
-  snowflakes: any[] = [];
+export class SnowFallComponent implements OnInit {
+  snowflakes: { left: string; size: string; duration: string; delay: string }[] = [];
 
   ngOnInit(): void {
-    this.createSnowflakes();
+    this.generateSnowflakes();
   }
 
-  createSnowflakes(): void {
-    for (let i = 0; i < 50; i++) {
-      this.snowflakes.push({
-        position: this.getRandomPosition(),
-        size: this.getRandomSize(),
-        duration: this.getRandomDuration(),
-      });
-    }
+  @HostListener('window:resize')
+  onResize(): void {
+    this.generateSnowflakes();
   }
 
-  getRandomPosition(): string {
-    return Math.random() * 100 + '%';
+  generateSnowflakes(): void {
+    const totalSnowflakes = 50; // Adjust this number as needed
+    this.snowflakes = Array.from({ length: totalSnowflakes }, () => ({
+      left: `${Math.random() * 100}vw`, // Random horizontal position
+      size: `${Math.random() * (20 - 10) + 40}px`, // Size between 10px and 20px
+      duration: `${Math.random() * (15 - 5) + 5}s`, // Fall duration between 5s and 15s
+      delay: `${Math.random() * 5}s`, // Random animation delay
+    }));
   }
-  
-  getRandomSize(): number {
-    return Math.random() * (20 - 10) + 10; // Snowflakes size between 10 and 20px
+
+  getStyle(snowflake: { left: string; size: string; duration: string; delay: string }) {
+    return {
+      left: snowflake.left,
+      fontSize: snowflake.size,
+      animationDuration: snowflake.duration,
+      animationDelay: snowflake.delay,
+    };
   }
-  
-  getRandomDuration(): string {
-    return (Math.random() * (10 - 20) + 20).toFixed(2) + 's'; // Snowflakes animation duration between 20s and 40s
-  }
-  
-  
   
 }
