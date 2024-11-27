@@ -7,10 +7,11 @@ import { GallerySectionComponent } from '../Components/gallery-section/gallery-s
 import { ContactSectionComponent } from '../Components/contact-section/contact-section.component';
 import { CommonModule } from '@angular/common'; 
 import { SnowFallComponent } from '../Components/snow-fall/snow-fall.component';
+import { ChatBotComponent } from '../Components/chat-bot/chat-bot.component';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [NavBarComponent,HeroSectionComponent,AboutSectionComponent,GallerySectionComponent,ContactSectionComponent,CommonModule,SnowFallComponent],
+  imports: [NavBarComponent,HeroSectionComponent,AboutSectionComponent,GallerySectionComponent,ContactSectionComponent,CommonModule,SnowFallComponent,ChatBotComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
