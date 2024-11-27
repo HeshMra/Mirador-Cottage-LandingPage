@@ -19,7 +19,10 @@ export class ChatBotComponent {
 
   // Predefined responses
   responses: { [key: string]: string } = {
-    hello: 'Hello! How can I assist you?',
+    hi: 'Hello! What is your first name?',
+    hello: 'Hello! What is your name?',
+    madhavee:'Ahh sudu manika, kawada bn?',
+    'chuttak kawa':'ado thota echchara kanna puluwannm mata kochcra kanna puluwanda??..methanaa',
     pricing: 'Our pricing details can be found on the Pricing page.',
     help: 'Sure, let me know what you need help with!',
     default: "I'm sorry, I didn't understand that. Can you rephrase?",
