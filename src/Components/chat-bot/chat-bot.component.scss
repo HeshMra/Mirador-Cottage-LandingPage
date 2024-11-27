@@ -49,3 +49,41 @@
     outline: none;
   }
   
+
+//   --------------------chatbotbutton---------------------
+
+.input-container {
+    position: relative;
+    display: flex;
+    width: 100%; /* Adjust based on your layout */
+  }
+  
+  input {
+    width: 100%; /* Make the input take the full width */
+    padding-right: 40px; /* Leave space for the button */
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .send-button {
+    position: absolute;
+    right: 10px;
+    top: 95%;
+    transform: translateY(-50%);
+    border: none;
+    background-color:#ffa600f1;
+    color: white;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .send-button:hover {
+    background-color: #0056b3;
+  }
+  
