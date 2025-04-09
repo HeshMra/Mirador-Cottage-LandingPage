@@ -19,15 +19,11 @@ export class ChatBotComponent {
 
   // Predefined responses
   responses: { [key: string]: string } = {
-    hi: 'Hello! What is your first name?',
-    hello: 'Hello! What is your name?',
-    madhavee:'Ahh sudu manika, kawada bn?',
-    'chuttak kawa':'ado thota echchara kanna puluwannm mata kochcra kanna puluwanda??..methanaa',
-    pricing: 'Our pricing details can be found on the Pricing page.',
-    help: 'Sure, let me know what you need help with!',
+    hi: 'Hello! please call us for more info',
+    hello: 'Hello! please call us for more info',
+    pricing: 'Hello! please call us for more info',
+    help: 'Hello! please call us for more info',
     default: "I'm sorry, I didn't understand that. Can you rephrase?",
-    contact: 'Call us - 099958555.',
-
   };
 
   toggleChat() {
